@@ -5,6 +5,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 @NgModule({
   declarations: [SidebarComponent],
   exports: [SidebarComponent],
-  imports: [CommonModule],
+  imports: [CommonModule]
 })
 export class SharedModule {}

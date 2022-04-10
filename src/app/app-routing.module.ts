@@ -10,11 +10,11 @@ const routes: Routes = [
   { path: 'region', component: PorRegionComponent },
   { path: 'capital', component: PorCapitalComponent },
   { path: 'pais/:id', component: VerPaisComponent },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
