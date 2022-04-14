@@ -20,7 +20,7 @@
   <span style="font-style: italic">{{ termino }}</span>
 </div>
 
-<div class="table table-hover">
+<div *ngIf="!hayError" class="table table-hover">
   <thead>
     <tr>
       <th>#</th>
