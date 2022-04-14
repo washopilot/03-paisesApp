@@ -13,13 +13,16 @@ export class PorPaisComponent {
   constructor(private paisService: PaisService) {}
 
   buscar() {
+    this.hayError = false;
     console.log(this.termino);
 
     this.paisService.buscarPais(this.termino).subscribe({
-      next: (resp) => console.log(resp),
+      next: (resp) => {
+        this.hayError = false;
+        console.log(resp);
+      },
       error: (err) => {
-        console.log('Error');
-        console.info(err);
+        this.hayError = true;
       }
     });
   }
