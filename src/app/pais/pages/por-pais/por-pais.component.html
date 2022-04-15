@@ -25,6 +25,7 @@
     <tr>
       <th>#</th>
       <th>Bandera</th>
+      <th>Escudo</th>
       <th>Nombre</th>
       <th>Población</th>
       <th></th>
@@ -34,7 +35,16 @@
     <tr *ngFor="let pais of paises; index as i">
       <td>{{ i + 1 }}</td>
       <td>
-        <img [src]="pais.flags['png']" class="small-flag" />
+        <img
+          *ngIf="!estaVacio(pais.flags)"
+          [src]="pais.flags.svg"
+          class="small-flag" />
+      </td>
+      <td>
+        <img
+          *ngIf="!estaVacio(pais.coatOfArms)"
+          [src]="pais.coatOfArms.svg"
+          class="small-coa" />
       </td>
       <td>{{ pais.translations['spa'].common }}</td>
       <td>{{ pais.population | number }}</td>
