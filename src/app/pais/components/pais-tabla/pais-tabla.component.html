@@ -1,4 +1,3 @@
-<p>pais-tabla works!</p>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -25,7 +24,7 @@
           [src]="pais.coatOfArms.svg"
           class="small-coa" />
       </td>
-      <td>{{ pais.translations['spa'].common }}</td>
+      <td>{{ pais.capital }}, {{ pais.name.common }}</td>
       <td>{{ pais.population | number }}</td>
       <td>
         <a [routerLink]="['/pais', pais.cca2]">Ver...</a>

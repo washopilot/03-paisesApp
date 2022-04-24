@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Country } from '../../interfaces/pais.interface';
 
 @Component({
@@ -6,11 +6,10 @@ import { Country } from '../../interfaces/pais.interface';
   templateUrl: './pais-tabla.component.html',
   styles: []
 })
-export class PaisTablaComponent implements OnInit {
+export class PaisTablaComponent {
   @Input() paises: Country[] = [];
   constructor() {}
 
-  ngOnInit(): void {}
   estaVacio(obj: object): boolean {
     return Object.keys(obj).length === 0;
   }

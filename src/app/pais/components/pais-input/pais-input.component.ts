@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -8,6 +8,7 @@ import { debounceTime } from 'rxjs/operators';
   styles: []
 })
 export class PaisInputComponent implements OnInit {
+  @Input() placeholder: string = '';
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
 
@@ -16,10 +17,8 @@ export class PaisInputComponent implements OnInit {
   termino: string = '';
 
   ngOnInit(): void {
-    this.debouncer.pipe(debounceTime(300)).subscribe({
-      next: (valor) => {
-        this.onDebounce.emit(valor);
-      }
+    this.debouncer.pipe(debounceTime(300)).subscribe((valor) => {
+      this.onDebounce.emit(valor);
     });
   }
 
